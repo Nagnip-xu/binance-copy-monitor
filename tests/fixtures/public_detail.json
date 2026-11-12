@@ -1,0 +1,19 @@
+{
+  "code": "000000",
+  "message": null,
+  "messageDetail": null,
+  "data": {
+    "leadPortfolioId": "5075281354358777856",
+    "nickname": "熬鹰资本",
+    "status": "ACTIVE",
+    "isPaused": false,
+    "currentCopyCount": 1000,
+    "maxCopyCount": 1000,
+    "riskControlMaxCopyCount": null,
+    "finalEffectiveMaxCopyCount": null,
+    "fixedRadioMinCopyUsd": 300.0,
+    "fixedAmountMinCopyUsd": 300.0,
+    "portfolioType": "PUBLIC"
+  },
+  "success": true
+}
