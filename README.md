@@ -6,7 +6,23 @@ Windows 桌面工具，用于监控币安合约带单组合，在满足条件时
 
 [下载 Windows 程序](https://github.com/Nagnip-xu/binance-copy-monitor/releases/latest) · [版本记录](https://github.com/Nagnip-xu/binance-copy-monitor/releases)
 
+[打开项目官网](https://nagnip-xu.github.io/binance-copy-monitor/) · [查看源代码](https://github.com/Nagnip-xu/binance-copy-monitor)
+
 这是个人开发的工具，与币安官方无隶属关系。使用网页内部接口，接口和登录规则可能变化；无法保证抢到空位或永久保持登录。合约跟单使用真实资产，可能产生亏损。
+
+项目官网是纯静态介绍页，只展示功能、脱敏界面和使用说明；网页不会登录币安、读取 Cookie 或发起跟单。
+
+## 项目官网
+
+直接访问 **[https://nagnip-xu.github.io/binance-copy-monitor/](https://nagnip-xu.github.io/binance-copy-monitor/)**，无需启动本地预览服务。官网提供三种运行方式的交互演示、真实软件界面、使用步骤、常见问题及 Windows 下载入口；演示不连接真实账户。
+
+官网源码位于 [`site/`](site/)，采用纯 HTML/CSS/JavaScript，包含自托管字体与许可。本地预览：
+
+```powershell
+python -m http.server 8765 --bind 127.0.0.1 --directory site
+```
+
+打开 `http://127.0.0.1:8765/` 即可查看。GitHub Pages 使用 [Deploy website](.github/workflows/pages.yml) 工作流，只发布 `site/`：向 `main` 推送网站目录或该工作流的修改后自动更新，也可在仓库 Actions 页面手动运行。发布状态见 [Actions](https://github.com/Nagnip-xu/binance-copy-monitor/actions/workflows/pages.yml)。
 
 ## 界面预览
 
@@ -214,6 +230,8 @@ binance-copy-monitor/
 ├── binance_monitor/       # 桌面界面、登录、监控、创建与核对
 ├── tests/                # 离线测试与公开数据样例
 ├── docs/images/          # README 界面图片
+├── site/                 # GitHub Pages 官网与静态资源
+├── .github/workflows/    # 官网自动部署
 ├── launcher.py           # EXE 打包入口
 ├── pyproject.toml        # Python 依赖与包配置
 ├── start.bat             # 正常启动

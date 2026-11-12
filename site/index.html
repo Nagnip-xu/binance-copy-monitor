@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172e43">
+  <meta name="description" content="币安合约跟单监控 Windows 桌面工具。专用 Edge 登录、持续抢位、结果核对和成功提醒。了解功能、查看真实界面并下载。">
+  <meta property="og:title" content="Copy Monitor · 把等待交给程序">
+  <meta property="og:description" content="币安合约跟单监控工具，在自己的电脑上持续运行，直到确认加入。">
+  <meta property="og:type" content="website">
+  <title>Copy Monitor · 币安合约跟单监控</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/noto-sans-sc.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<!--
+THESIS: A clear handoff from waiting to confirmed joining, expressed as a full-width interactive control surface rather than financial performance imagery.
+OWN-WORLD: Fog-white space, navy panels, lime signals, self-hosted Noto Sans SC and Barlow, planar divisions and precise geometric symbols.
+STORY: Understand the desktop tool, explore its three modes, see the real interface, learn the setup, then download.
+FIRST VIEWPORT: Large Chinese headline and download action above a wide navy relay panel; three mode switches and a request-to-confirmation path form the focal interaction.
+FORM: Communication relay control panel, grounded candidate 3, seed dbedcf56. User delegated visual choice on 2026-11-12.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 .7 7M4 4v6h6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><path d="M9 4h11v13H9ZM4 8v13h11"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.2-4.3-2.2-6-2.7m12 5v-3.3a2.9 2.9 0 0 0-.8-2.3c2.7-.3 5.6-1.3 5.6-6a4.7 4.7 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.5 11.5 0 0 0-6 0C6.6 3 5.6 3.3 5.6 3.3a4.3 4.3 0 0 0-.1 3.2 4.7 4.7 0 0 0-1.3 3.2c0 4.7 2.8 5.7 5.5 6A2.9 2.9 0 0 0 9 18v3.3"/></symbol>
+    <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3 4h8v8H3ZM14 4h8v8h-8ZM3 15h8v8H3ZM14 15h8v8h-8Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Copy Monitor 首页">
+      <img src="assets/mark.svg" alt="" width="38" height="38">
+      <span>Copy Monitor<span class="brand-sub">币安合约跟单监控</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="打开导航"><svg class="icon"><use href="#i-menu"/></svg></button>
+    <nav id="main-nav" class="main-nav" aria-label="主导航">
+      <a href="#capabilities">功能</a><a href="#interface">软件界面</a><a href="#guide">开始使用</a><a href="#faq">常见问题</a>
+      <a class="nav-github" href="https://github.com/Nagnip-xu/binance-copy-monitor" target="_blank" rel="noopener noreferrer">GitHub <svg class="icon"><use href="#i-external"/></svg></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-intro">
+        <h1 id="hero-title">把等待，<br>交给程序<span class="title-stop">。</span></h1>
+        <div class="hero-copy">
+          <p class="hero-description">你关注带单员，<br>它负责持续等候与申请。</p>
+          <p>币安合约跟单 Windows 工具。专用 Edge 登录，在你的电脑上持续运行，确认加入后提醒你。</p>
+          <div class="hero-actions"><a class="button button-primary" href="#download"><svg class="icon"><use href="#i-windows"/></svg>下载 Windows 版<svg class="icon end-icon"><use href="#i-arrow"/></svg></a><a class="text-link" href="#guide">查看使用指南</a></div>
+          <p class="compatibility"><span class="signal-dot"></span>v0.2.0<span class="small-separator"></span>本地运行<span class="small-separator"></span>无需浏览器扩展</p>
+        </div>
+      </div>
+
+      <div class="relay" id="demo" aria-label="运行方式交互演示">
+        <div class="relay-top"><div class="relay-title"><span class="status-square"></span><h2>一次申请，直到确认。</h2></div><span class="demo-label">交互演示 · 不连接真实账户</span></div>
+        <div class="relay-layout">
+          <div class="relay-controls">
+            <fieldset class="mode-picker"><legend>选择运行方式</legend>
+              <label class="mode-option"><input type="radio" name="demo-mode" value="direct" checked><span class="mode-radio"></span><span>直接抢位<small>持续申请，明确满员后重试</small></span><svg class="icon"><use href="#i-arrow"/></svg></label>
+              <label class="mode-option"><input type="radio" name="demo-mode" value="slot"><span class="mode-radio"></span><span>有空位再加入<small>先查空位，再复核和申请</small></span><svg class="icon"><use href="#i-arrow"/></svg></label>
+              <label class="mode-option"><input type="radio" name="demo-mode" value="watch"><span class="mode-radio"></span><span>仅监控<small>关闭真实资金，只观察名额</small></span><svg class="icon"><use href="#i-arrow"/></svg></label>
+            </fieldset>
+            <p class="relay-footnote">切换模式，看看它如何运行。<br>这里的变化均为模拟，不会发起交易。</p>
+          </div>
+          <div class="relay-display">
+            <div class="display-topline"><span>示例组合 A</span><span class="demo-state" id="demo-state"><span class="signal-dot"></span>等待演示</span></div>
+            <ol class="signal-path" id="signal-path">
+              <li class="path-step is-current"><span class="path-node"><span></span></span><span class="path-name">持续申请</span><small>明确满员则继续等待</small></li>
+              <li class="path-step"><span class="path-node"><span></span></span><span class="path-name">核对结果</span><small>结果不明，不再提交</small></li>
+              <li class="path-step"><span class="path-node"><svg class="icon"><use href="#i-check"/></svg></span><span class="path-name">确认加入</span><small>账户状态再次确认</small></li>
+            </ol>
+            <div class="demo-message" role="status" aria-live="polite" aria-atomic="true"><span class="log-time" id="demo-time">准备就绪</span><p id="demo-message">先完成账号、最低金额和余额检查，再开始持续申请。</p></div>
+            <div class="demo-bottom"><button class="button button-lime" id="demo-play" type="button"><svg class="icon"><use href="#i-play"/></svg><span>播放运行过程</span></button><button class="reset-button" id="demo-reset" type="button" aria-label="重置运行演示"><svg class="icon"><use href="#i-reset"/></svg></button><span class="demo-duration">一次演示，约 8 秒</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bottom-note"><span>持续运行，由你开始，也由你停止。</span><span>默认真实资金 · 点击桌面程序「开始监控」才会提交</span></div>
+    </section>
+
+    <section class="capabilities wrap section" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-heading"><h2 id="capabilities-title">该持续的，持续。<br>该停下的，停下。</h2><p>等待空位可以交给程序。<br>每一笔申请的状态，都要说清楚。</p></div>
+      <div class="feature-layout">
+        <div class="feature-statement"><div class="continuity-symbol" aria-hidden="true"><svg viewBox="0 0 300 150"><path d="M20 75h55c20 0 30-45 55-45s35 90 60 90 35-45 55-45h35"/><circle cx="20" cy="75" r="7"/><circle cx="280" cy="75" r="7"/></svg></div><h3>不必反复刷新。<br>保留你的时间。</h3><p>明确返回满员时持续重试，不设置抢位总时长或次数限制。全部目标确认加入后停止，也可以随时手动停止。</p><span class="feature-tag">运行期间请求防止自动休眠</span></div>
+        <div class="feature-details">
+          <article><span class="feature-glyph" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="5" width="8" height="8"/><rect x="19" y="5" width="8" height="8"/><rect x="5" y="19" width="8" height="8"/><rect x="19" y="19" width="8" height="8"/></svg></span><div><h3>多个目标，一个工作台</h3><p>最多配置 20 个带单组合，共用间隔、串行执行。表格展示最近查询结果，日志保留实际运行进度。</p></div></article>
+          <article><span class="feature-glyph" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 11h22M5 21h22"/><circle cx="12" cy="11" r="4"/><circle cx="21" cy="21" r="4"/></svg></span><div><h3>少几个设置，少一点纠结</h3><p>设置目标、间隔、金额上限与跟单模式。按平台最低金额加入，杠杆和保证金模式跟随带单员。</p></div></article>
+          <article><span class="feature-glyph" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 4h16v24H8ZM12 9h8M12 14h8m-8 7 3 3 6-7"/></svg></span><div><h3>结果未确认，就不重复申请</h3><p>创建结果不明时，暂停新的创建，只读核对原申请。同一账号重启后继续核对，记录保留在本地。</p></div></article>
+        </div>
+      </div>
+      <div class="interval-note"><strong>0.1 秒是间隔设置，<br class="mobile-break">不是速度承诺。</strong><p>实际频率受平台响应、账号核验和网络影响；限流时遵循冷却时间。查询结果不明时，会暂停抢位。</p><a href="https://github.com/Nagnip-xu/binance-copy-monitor#参数说明" target="_blank" rel="noopener noreferrer" class="text-link">了解参数<svg class="icon"><use href="#i-external"/></svg></a></div>
+    </section>
+
+    <section class="interface-section section" id="interface" aria-labelledby="interface-title">
+      <div class="wrap"><div class="section-heading"><h2 id="interface-title">打开就是工作台。</h2><p>两个设置页，一个监控表格。<br>进度和结果，留在看得见的地方。</p></div>
+        <div class="screenshot-layout"><figure class="product-figure"><button class="screenshot-button" id="open-screenshot" type="button" aria-label="放大查看桌面程序完整截图"><img src="assets/main-window.webp" alt="Windows 桌面程序：监控配置、本机登录、监控对象表格和黑底运行日志，当前目标待查询。" width="1140" height="773" loading="lazy"><span class="expand-image"><svg class="icon"><use href="#i-expand"/></svg>查看原图</span></button><figcaption>真实软件界面 · 截图早于拖动条改动，未展示账户余额。</figcaption></figure>
+          <div class="interface-notes"><div><span class="interface-marker" aria-hidden="true"></span><h3>参数，简单几项</h3><p>公开链接或 Portfolio ID，每行一个；设置间隔、最低金额安全上限与跟单模式。</p></div><div><span class="interface-marker" aria-hidden="true"></span><h3>登录，在自己的电脑</h3><p>程序打开专用 Edge，你在官方页面完成登录。无需扩展，也不用复制 Cookie。</p></div><div><span class="interface-marker" aria-hidden="true"></span><h3>日志，留下每次交接</h3><p>实际提交数、拒绝原因、核对进度和成功结果。拖动中间分隔条，给日志更多空间。</p></div><a class="text-link" href="https://github.com/Nagnip-xu/binance-copy-monitor#监控对象与运行日志" target="_blank" rel="noopener noreferrer">阅读完整说明<svg class="icon"><use href="#i-external"/></svg></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section wrap section" id="guide" aria-labelledby="guide-title">
+      <div class="section-heading"><h2 id="guide-title">从这里，开始等待。</h2><p>准备好 Windows、Microsoft Edge<br>以及稳定的网络连接。</p></div>
+      <ol class="setup-steps"><li><span class="step-number">1</span><h3>下载并打开</h3><p>将 EXE 放进可写的独立文件夹。已包含 Python 运行组件，安装好 Edge 即可。</p><a href="#download" class="text-link">获取 Windows 版<svg class="icon"><use href="#i-arrow"/></svg></a></li><li><span class="step-number">2</span><h3>登录并检测账户</h3><p>在「本机登录」打开专用 Edge，登录币安，再回到程序检测账户和余额。</p><span class="step-hint">首次需在专用窗口重新登录</span></li><li><span class="step-number">3</span><h3>设置目标，开始监控</h3><p>填入组合链接，核对金额与模式后开始。保持程序、专用 Edge 和网络在线。</p><span class="step-hint">可以先取消真实资金，仅监控</span></li></ol>
+      <div class="setup-reminder"><svg class="icon"><use href="#i-check"/></svg><p>登录、检测账户和测试连接都只查询。<strong>点击「开始监控」后，才按所选模式运行。</strong></p></div>
+    </section>
+
+    <section class="faq-section wrap section" id="faq" aria-labelledby="faq-title"><div class="faq-intro"><h2 id="faq-title">开始前，<br>你可能想知道。</h2><p>这里先回答最常见的几个问题。</p><a class="text-link" href="https://github.com/Nagnip-xu/binance-copy-monitor/issues" target="_blank" rel="noopener noreferrer">还有问题？提个 Issue<svg class="icon"><use href="#i-external"/></svg></a></div>
+      <div class="faq-list">
+        <details open><summary>真的可以 24 小时运行吗？<svg class="icon"><use href="#i-plus"/></svg></summary><div class="faq-answer"><p>没有抢位时长限制。保持电脑接电、程序和专用 Edge 打开、登录有效、网络与代理稳定即可持续运行。屏幕可以熄灭；合盖、手动睡眠、关机或重启会打断运行。当前没有开机自动恢复监控。</p></div></details>
+        <details><summary>能放在服务器上运行吗？<svg class="icon"><use href="#i-plus"/></svg></summary><div class="faq-answer"><p>可以使用带图形桌面和 Microsoft Edge 的 Windows 服务器，仍需完成专用窗口登录并保持会话在线。当前不支持 Linux 无头自动跟单，也不提供 Docker 部署。</p></div></details>
+        <details><summary>为什么设置了 0.1 秒，实际会更慢？<svg class="icon"><use href="#i-plus"/></svg></summary><div class="faq-answer"><p>间隔之外还需要等待网络、平台响应与账号核验。请求串行执行，多个目标共用间隔；限流或查询故障也会增加等待。0.1 秒不代表每秒一定提交 10 次。</p></div></details>
+        <details><summary>「结果核对中」还会继续抢位吗？<svg class="icon"><use href="#i-plus"/></svg></summary><div class="faq-answer"><p>不会。上次创建可能已被平台执行，此时暂停所有新申请，只查询原申请结果。余额未变或尚未显示已跟单，都不能证明失败；不要删除提交记录来绕过核对。</p></div></details>
+        <details><summary>金额上限 300 USDT，就是投入 300 吗？<svg class="icon"><use href="#i-plus"/></svg></summary><div class="faq-answer"><p>不是。按平台最低金额投入：最低是 100，就申请投入 100；最低超过 300，就不加入。金额上限对每个组合分别生效，不是所有目标的总预算。资金需要在可用现货 USDT 中。</p></div></details>
+        <details><summary>能保证抢到，或者保证收益吗？<svg class="icon"><use href="#i-plus"/></svg></summary><div class="faq-answer"><p>不能。空位竞争、网络和平台风控都会影响结果。程序采用网页内部接口，规则可能变化。合约跟单使用真实资产，可能亏损；工具与币安官方无隶属关系。定额模式尚未完成实盘验证。</p></div></details>
+      </div>
+    </section>
+
+    <section class="download-section" id="download" aria-labelledby="download-title"><div class="download-grid wrap"><div class="download-copy"><h2 id="download-title">下一次等待，<br>换个方式。</h2><p>下载桌面工具，登录自己的账户。<br>何时开始，由你决定。</p><a class="button button-dark" href="https://github.com/Nagnip-xu/binance-copy-monitor/releases/download/v0.2.0/BinanceCopyMonitor.exe"><svg class="icon"><use href="#i-download"/></svg>下载 Windows 版<svg class="icon end-icon"><use href="#i-arrow"/></svg></a><span class="download-meta">v0.2.0 · Windows 桌面 · 约 57 MB</span></div><div class="download-info"><h3>下载后，请先核对。</h3><p>默认开启真实资金与直接抢位。开始前核对目标、资金上限与运行方式；也可以先仅监控。</p><div class="download-links"><a href="https://github.com/Nagnip-xu/binance-copy-monitor/releases/tag/v0.2.0" target="_blank" rel="noopener noreferrer">版本说明与校验文件<svg class="icon"><use href="#i-external"/></svg></a><a href="https://github.com/Nagnip-xu/binance-copy-monitor#readme" target="_blank" rel="noopener noreferrer">完整中文使用指南<svg class="icon"><use href="#i-external"/></svg></a><button id="copy-checksum" type="button">复制 SHA-256 校验值<svg class="icon"><use href="#i-copy"/></svg></button></div><p class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p><code id="checksum-value" hidden>d1c03a35fe32e08e95b941857c13e407745820d571f3281cd3264613080710ab</code></div></div></section>
+  </main>
+
+  <footer class="site-footer wrap"><div class="footer-top"><a class="brand" href="#"><img src="assets/mark.svg" alt="" width="32" height="32"><span>Copy Monitor</span></a><span>个人开发 · Nagnip-xu</span><a class="text-link" href="https://github.com/Nagnip-xu/binance-copy-monitor" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg>在 GitHub 查看项目</a></div><p>本工具与币安官方无隶属关系。网页内部接口可能变化，无法保证抢位成功或持续登录。合约跟单涉及真实资产与亏损风险，请在理解运行方式后使用。</p><div class="footer-bottom"><span>© 2026 Nagnip-xu</span><span>本地运行 · 自己掌控</span></div></footer>
+
+  <dialog class="image-dialog" id="screenshot-dialog" aria-labelledby="image-dialog-title"><div class="dialog-header"><h2 id="image-dialog-title">桌面程序 · 真实界面</h2><button id="close-screenshot" type="button" aria-label="关闭截图"><svg class="icon"><use href="#i-close"/></svg></button></div><div class="dialog-image"><img src="assets/main-window.webp" alt="桌面程序完整截图，展示配置、监控对象和运行日志。" width="1140" height="773"></div><p>截图早于拖动条改动。当前版本支持上下调整监控对象与日志空间。</p></dialog>
+</body>
+</html>
