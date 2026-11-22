@@ -23,6 +23,12 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 
 线上地址：[https://nagnip-xu.github.io/binance-copy-monitor/](https://nagnip-xu.github.io/binance-copy-monitor/)。网站由仓库根目录的 GitHub Actions 工作流发布，工作流只上传 `site/`，不会把项目根目录的本地账户数据作为网页内容。
 
+## 官网显示 404 时
+
+在仓库的 **Settings → Pages → Build and deployment** 中，确认 Source 为 **GitHub Actions**。如果站点曾被取消发布或 Pages 被关闭，需要先重新启用 Pages；只保留网页文件不会自动恢复站点配置。
+
+然后到 **Actions → Deploy website → Run workflow**，选择 `main` 重新发布。工作流会等待上传产物可查询后再部署，并检查线上首页，避免仅上传成功就误认为官网可访问。成功后访问上面的官网地址；浏览器仍显示旧的 404 时可按 `Ctrl+F5` 刷新。
+
 ## 字体与图片
 
 页面自托管 [Noto Sans SC](https://github.com/google/fonts/tree/main/ofl/notosanssc) 与 [Barlow](https://github.com/google/fonts/tree/main/ofl/barlow) 的 WOFF 子集，许可文本位于 `assets/fonts/`。中文子集覆盖当前页面和交互文案；新增中文时，应补充字形子集，避免回退字体造成字重差异。

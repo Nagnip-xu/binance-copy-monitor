@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -35,6 +36,43 @@ jobs:
         with:
           path: site
 
+      - name: Wait for uploaded artifact to become available
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          for attempt in {1..12}; do
+            if artifact_id=$(gh api "/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" \
+              --header 'Cache-Control: no-cache' \
+              --jq '.artifacts[] | select(.name == "github-pages" and .expired == false) | .id') && \
+              [[ -n "$artifact_id" ]]; then
+              echo "Website artifact is available for deployment."
+              exit 0
+            fi
+            echo "Waiting for GitHub to expose the uploaded artifact ($attempt/12)."
+            sleep 5
+          done
+          echo "::error::The uploaded website artifact did not become available."
+          exit 1
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verify published homepage
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: bash
+        run: |
+          for attempt in {1..12}; do
+            if curl --fail --silent --show-error --location --max-time 15 "$PAGE_URL" \
+              --output "$RUNNER_TEMP/published-homepage.html" && \
+              grep -q 'id="main"' "$RUNNER_TEMP/published-homepage.html"; then
+              echo "Published homepage is accessible: $PAGE_URL"
+              exit 0
+            fi
+            echo "Waiting for the published homepage ($attempt/12)."
+            sleep 5
+          done
+          echo "::error::The deployed homepage is not accessible yet."
+          exit 1
