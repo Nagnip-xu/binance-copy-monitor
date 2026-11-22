@@ -169,7 +169,7 @@ The type ramp is deliberately steep between headings and reading copy. It is not
 - **Title:** the frontmatter's base title. Dense feature/interface titles adjust within (14–19px); the large statement title uses (28px), (23px) up to (820px), and (26px) up to (600px).
 - **Body and explanation:** body is the default document text. Product explanations use the `explanation` role at every viewport; state messages use `state-message` above (600px) and the explanation size below it.
 - **Actions and mode labels:** actions use the `action` role. Main mobile download actions, the guide link, FAQ questions, and download resource rows rise to (14px). Mode labels are (14px) on wide layouts and (12px) at tablet/mobile widths; mobile mode labels have line height (1.6).
-- **Metadata:** version, simulation notices, timing, path captions, figure captions, and minor provenance use the `metadata` role. Funds/start reminders and footer risk copy use (12px) with line height (1.9).
+- **Metadata:** simulation notices, timing, path captions, figure captions, and minor provenance use the `metadata` role. The brand sublabel and screenshot action remain at least (11px); version information and the demonstration explanation use (12px). Funds/start reminders and footer risk copy use (12px) with line height (1.9).
 
 **The Readable Explanation Rule.** Apply the final responsive text rules: product explanations stay at (14px); state messages stay at (13px) on desktop and (14px) on mobile; action text stays at least (13px), mode labels at least (12px), and metadata at (11px). The earlier smaller declarations in the stylesheet are superseded source history, not reusable type tokens.
 
@@ -239,7 +239,7 @@ The real desktop screenshot is an image button with a soft shadow and a bottom-r
 
 ### Don't:
 
-- **Don't** promote superseded small text declarations or the tiny brand sublabel into the reading hierarchy.
+- **Don't** reuse superseded small text declarations or reduce functional labels below (11px).
 - **Don't** turn an unconfirmed result into a success signal or remove its accompanying explanation.
 - **Don't** add fabricated pricing, customer quotations, returns, or performance proof to support the visual identity.
 - **Don't** replace the product's existing geometric SVG icon language with text glyphs.
